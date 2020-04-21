@@ -1,0 +1,8 @@
+rootProject.name='Footballer'
+include ':app'
+include ':core-screen-views'
+include ':feature-countries'
+include ':common-models-feature'
+include ':common-models-list'
+include ':common-resources'
+include ':common-containers'
