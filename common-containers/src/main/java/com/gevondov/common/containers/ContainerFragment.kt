@@ -1,5 +1,5 @@
 package com.gevondov.common.containers
 
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 
-class ContainerFragment : Fragment(R.layout.fragment_container)
+class ContainerFragment : NavHostFragment()
