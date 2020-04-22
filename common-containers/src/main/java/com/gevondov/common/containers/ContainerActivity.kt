@@ -2,12 +2,11 @@ package com.gevondov.common.containers
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.gevondov.common.navigation.CommonFragmentFactory
 
 class ContainerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportFragmentManager.fragmentFactory = CommonFragmentFactory()
+        supportFragmentManager.fragmentFactory = ContainerFragmentFactory()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_container)
     }

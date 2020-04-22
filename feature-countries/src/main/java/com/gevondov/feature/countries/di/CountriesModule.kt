@@ -11,13 +11,12 @@ import com.gevondov.feature.countries.screen.CountriesScreen
 import com.gevondov.feature.countries.store.CountriesStateStore
 import com.gevondov.feature.countries.view.CountriesViewImpl
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.qualifier.TypeQualifier
 import org.koin.dsl.module
 
 val COUNTRIES_MODULE = module {
 
     factory {
-        val viewScope = getKoin().getOrCreateScope("", TypeQualifier(CountriesViewImpl::class))
+        val viewScope = getKoin().createScope<CountriesViewImpl>()
         CountriesViewImpl(viewScope, viewScope.get(), viewScope.get())
     }
 
