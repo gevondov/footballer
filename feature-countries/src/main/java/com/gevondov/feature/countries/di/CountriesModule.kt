@@ -13,7 +13,7 @@ import com.gevondov.feature.countries.view.CountriesViewImpl
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
-val COUNTRIES_MODULE = module {
+val MODULE_COUNTRIES = module {
 
     factory {
         val viewScope = getKoin().createScope<CountriesViewImpl>()
