@@ -20,7 +20,6 @@ android {
 dependencies {
     implementation project(":common-resources")
     implementation project(":common-models-feature")
-    implementation project(":common-models-list")
     implementation project(":core-screen-views")
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
