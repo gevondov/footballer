@@ -34,6 +34,7 @@ class CountriesStateStore(
             drawToolbarTitle(newState.toolbarTitle)
             drawCountries(newState.countries)
         }
+        state = newState
     }
 
     private fun drawToolbarTitle(toolbarTitle: String?) {
