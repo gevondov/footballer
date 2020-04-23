@@ -5,6 +5,8 @@ import com.gevondov.core.screen.views.list.ListScreenViewImpl
 import com.gevondov.core.screen.views.text.TextScreenViewImpl
 import com.gevondov.core.screen.views.toolbar.ToolbarScreenViewImpl
 import com.gevondov.feature.countries.databinding.FeatureCountriesBinding
+import com.gevondov.feature.countries.model.CountriesModel
+import com.gevondov.feature.countries.model.CountriesModelImpl
 import com.gevondov.feature.countries.presenter.CountriesPresenter
 import com.gevondov.feature.countries.presenter.CountriesPresenterImpl
 import com.gevondov.feature.countries.screen.CountriesScreen
@@ -24,7 +26,9 @@ val MODULE_COUNTRIES = module {
 
         scoped { FeatureCountriesBinding.inflate(LayoutInflater.from(androidContext())) }
 
-        scoped<CountriesPresenter> { CountriesPresenterImpl(get()) }
+        scoped<CountriesModel> { CountriesModelImpl() }
+
+        scoped<CountriesPresenter> { CountriesPresenterImpl(get(), get()) }
 
         scoped { CountriesStateStore(get()) }
 
