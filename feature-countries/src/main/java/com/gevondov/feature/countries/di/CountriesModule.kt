@@ -38,7 +38,7 @@ val MODULE_COUNTRIES = module {
                 toolbarView = ToolbarScreenViewImpl(
                     titleView = TextScreenViewImpl(binding.toolbarTitle)
                 ),
-                countriesView = ListScreenViewImpl(binding.countries)
+                countriesView = ListScreenViewImpl(binding.countries, emptyList())
             )
         }
 
