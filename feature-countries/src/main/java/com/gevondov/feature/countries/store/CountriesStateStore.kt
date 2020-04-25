@@ -1,8 +1,10 @@
 package com.gevondov.feature.countries.store
 
 import com.gevondov.common.models.feature.Country
+import com.gevondov.core.screen.views.list.ListValue
 import com.gevondov.core.screen.views.toolbar.ToolbarPayload
 import com.gevondov.core.screen.views.toolbar.ToolbarValue
+import com.gevondov.delegate.text.single.row.SingleRowTextItem
 import com.gevondov.feature.countries.screen.CountriesScreen
 import com.gevondov.feature.countries.state.CountriesState
 
@@ -42,6 +44,8 @@ class CountriesStateStore(
     }
 
     private fun drawCountries(countries: List<Country>?) {
+        val items = countries?.map { SingleRowTextItem(it.name, it.name) }
+        screen.countriesView.draw(ListValue(items))
     }
 
     // TODO Move to parent class

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import com.gevondov.core.screen.views.list.ListScreenViewImpl
 import com.gevondov.core.screen.views.text.TextScreenViewImpl
 import com.gevondov.core.screen.views.toolbar.ToolbarScreenViewImpl
+import com.gevondov.delegate.text.single.row.SingleRowTextDelegate
 import com.gevondov.feature.countries.databinding.FeatureCountriesBinding
 import com.gevondov.feature.countries.model.CountriesModel
 import com.gevondov.feature.countries.model.CountriesModelImpl
@@ -38,7 +39,9 @@ val MODULE_COUNTRIES = module {
                 toolbarView = ToolbarScreenViewImpl(
                     titleView = TextScreenViewImpl(binding.toolbarTitle)
                 ),
-                countriesView = ListScreenViewImpl(binding.countries, emptyList())
+                countriesView = ListScreenViewImpl(binding.countries, listOf(
+                    SingleRowTextDelegate()
+                ))
             )
         }
 

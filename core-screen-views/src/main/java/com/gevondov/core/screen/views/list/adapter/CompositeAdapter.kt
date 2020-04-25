@@ -29,9 +29,18 @@ class CompositeAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        findDelegate(position).bindViewHolder(holder, items[position], null)
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, payloads: MutableList<Any>) {
+        val delegatePayloads = payloads.filterIsInstance<List<String>>().flatten().distinct()
+        findDelegate(position).bindViewHolder(holder, items[position], delegatePayloads)
+    }
+
+    private fun findDelegate(position: Int): DelegateAdapter {
         val item = items[position]
         val delegate = delegates.find { it.canHandleItem(item) }
         checkNotNull(delegate) { "There is no delegate for item=$item" }
-        delegate.bindViewHolder(holder, item)
+        return delegate
     }
 }
