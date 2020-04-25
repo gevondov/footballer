@@ -4,12 +4,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gevondov.core.screen.views.list.ListValue
 
-interface DelegateAdapter {
+interface DelegateAdapter<VH : RecyclerView.ViewHolder, I : ListValue.Item> {
 
     fun canHandleItem(item: ListValue.Item): Boolean
 
-    fun createViewHolder(parent: ViewGroup): RecyclerView.ViewHolder
+    fun createViewHolder(parent: ViewGroup): VH
 
-    fun bindViewHolder(holder: RecyclerView.ViewHolder, item: ListValue.Item, payloads: List<String>?)
+    fun bindViewHolder(holder: VH, item: I, payloads: List<String>?)
 
 }

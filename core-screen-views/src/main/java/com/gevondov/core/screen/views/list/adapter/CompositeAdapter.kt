@@ -4,8 +4,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gevondov.core.screen.views.list.ListValue
 
-class CompositeAdapter(
-    private val delegates: List<DelegateAdapter>
+internal class CompositeAdapter(
+    private val delegates: List<DelegateAdapterWrapper<*, *>>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items = emptyList<ListValue.Item>()
@@ -37,7 +37,7 @@ class CompositeAdapter(
         findDelegate(position).bindViewHolder(holder, items[position], delegatePayloads)
     }
 
-    private fun findDelegate(position: Int): DelegateAdapter {
+    private fun findDelegate(position: Int): DelegateAdapterWrapper<*, *> {
         val item = items[position]
         val delegate = delegates.find { it.canHandleItem(item) }
         checkNotNull(delegate) { "There is no delegate for item=$item" }
