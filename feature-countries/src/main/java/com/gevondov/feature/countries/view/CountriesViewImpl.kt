@@ -6,22 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.gevondov.feature.countries.databinding.FeatureCountriesBinding
-import com.gevondov.feature.countries.presenter.CountriesPresenter
+import com.gevondov.feature.countries.presenter.CountriesViewModel
+import org.koin.androidx.viewmodel.scope.getViewModel
 import org.koin.core.scope.Scope
 
 class CountriesViewImpl(
     private val scope: Scope,
-    private val binding: FeatureCountriesBinding,
-    private val presenter: CountriesPresenter
+    private val binding: FeatureCountriesBinding
 ) : Fragment(), CountriesView {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        scope.getViewModel<CountriesViewModel>(this)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return binding.root
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        scope.close()
     }
 
 }

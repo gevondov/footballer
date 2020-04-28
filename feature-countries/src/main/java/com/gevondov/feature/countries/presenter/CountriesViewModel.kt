@@ -1,12 +1,15 @@
 package com.gevondov.feature.countries.presenter
 
+import androidx.lifecycle.ViewModel
 import com.gevondov.feature.countries.model.CountriesModel
 import com.gevondov.feature.countries.store.CountriesStateStore
+import org.koin.core.scope.Scope
 
-class CountriesPresenterImpl(
+class CountriesViewModel(
+    private val scope: Scope,
     private val stateStore: CountriesStateStore,
     private val model: CountriesModel
-) : CountriesPresenter {
+) : ViewModel() {
 
     init {
         stateStore.applyState(
@@ -16,6 +19,11 @@ class CountriesPresenterImpl(
         stateStore.applyState(
             countries = model.loadCountries()
         )
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        scope.close()
     }
 
 }
