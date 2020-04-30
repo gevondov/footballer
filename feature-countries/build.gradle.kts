@@ -15,7 +15,7 @@ android {
     }
 
     viewBinding {
-        enabled = true
+        isEnabled = true
     }
 }
 
@@ -32,8 +32,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
 
-    def koin_version="2.1.5"
-    implementation("org.koin:koin-core:$koin_version")
-    implementation("org.koin:koin-android:$koin_version")
-    implementation("org.koin:koin-androidx-viewmodel:$koin_version")
+    val koinVersion="2.1.5"
+    implementation("org.koin:koin-core:$koinVersion")
+    implementation("org.koin:koin-android:$koinVersion")
+    implementation("org.koin:koin-androidx-viewmodel:$koinVersion")
 }

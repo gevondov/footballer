@@ -25,11 +25,11 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.fragment:fragment-ktx:1.2.4")
 
-    def navigation_version="2.2.2"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navigation_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$navigation_version")
+    val navigationVersion="2.2.2"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
 
-    def koin_version="2.1.5"
-    implementation("org.koin:koin-core:$koin_version")
-    implementation("org.koin:koin-android:$koin_version")
+    val koinVersion="2.1.5"
+    implementation("org.koin:koin-core:$koinVersion")
+    implementation("org.koin:koin-android:$koinVersion")
 }

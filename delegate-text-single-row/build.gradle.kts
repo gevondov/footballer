@@ -15,7 +15,7 @@ android {
     }
 
     viewBinding {
-        enabled = true
+        isEnabled = true
     }
 }
 
