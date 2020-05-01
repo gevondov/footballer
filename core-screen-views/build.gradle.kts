@@ -17,8 +17,8 @@ android {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61")
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.core:core-ktx:1.2.0")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation(libraries.kotlin.core)
+    implementation(libraries.android.compat)
+    implementation(libraries.ktx.core)
+    implementation(libraries.android.recyclerView)
 }

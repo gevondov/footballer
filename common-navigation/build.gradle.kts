@@ -19,13 +19,11 @@ android {
 dependencies {
     implementation(project(":feature-countries"))
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61")
+    implementation(libraries.kotlin.core)
 
-    val navigationVersion="2.2.2"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
+    implementation(libraries.ktx.navigation.fragment)
+    implementation(libraries.ktx.navigation.ui)
 
-    val koinVersion="2.1.5"
-    implementation("org.koin:koin-core:$koinVersion")
-    implementation("org.koin:koin-android:$koinVersion")
+    implementation(libraries.koin.core)
+    implementation(libraries.koin.android)
 }

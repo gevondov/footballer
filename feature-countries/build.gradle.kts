@@ -14,9 +14,7 @@ android {
         versionName = "1.0.0"
     }
 
-    viewBinding {
-        isEnabled = true
-    }
+    viewBinding.isEnabled = true
 }
 
 dependencies {
@@ -25,15 +23,14 @@ dependencies {
     implementation(project(":core-screen-views"))
     implementation(project(":delegate-text-single-row"))
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61")
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.core:core-ktx:1.2.0")
-    implementation("androidx.fragment:fragment-ktx:1.2.4")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation(libraries.kotlin.core)
+    implementation(libraries.android.compat)
+    implementation(libraries.ktx.core)
+    implementation(libraries.ktx.fragment)
+    implementation(libraries.android.constraintLayout)
+    implementation(libraries.android.recyclerView)
 
-    val koinVersion="2.1.5"
-    implementation("org.koin:koin-core:$koinVersion")
-    implementation("org.koin:koin-android:$koinVersion")
-    implementation("org.koin:koin-androidx-viewmodel:$koinVersion")
+    implementation(libraries.koin.core)
+    implementation(libraries.koin.android)
+    implementation(libraries.koin.viewModel)
 }
