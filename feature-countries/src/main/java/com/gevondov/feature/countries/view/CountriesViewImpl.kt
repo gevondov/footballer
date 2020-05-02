@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.gevondov.feature.countries.databinding.FeatureCountriesBinding
-import com.gevondov.feature.countries.presenter.CountriesViewModel
+import com.gevondov.feature.countries.viewmodel.CountriesViewModel
 import org.koin.androidx.viewmodel.scope.getViewModel
 import org.koin.core.scope.Scope
 

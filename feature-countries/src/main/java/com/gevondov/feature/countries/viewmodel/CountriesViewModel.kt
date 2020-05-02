@@ -1,4 +1,4 @@
-package com.gevondov.feature.countries.presenter
+package com.gevondov.feature.countries.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.gevondov.feature.countries.model.CountriesModel

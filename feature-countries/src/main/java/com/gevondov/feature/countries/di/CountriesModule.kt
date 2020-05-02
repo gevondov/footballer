@@ -8,10 +8,10 @@ import com.gevondov.delegate.text.single.row.SingleRowTextDelegate
 import com.gevondov.feature.countries.databinding.FeatureCountriesBinding
 import com.gevondov.feature.countries.model.CountriesModel
 import com.gevondov.feature.countries.model.CountriesModelImpl
-import com.gevondov.feature.countries.presenter.CountriesViewModel
 import com.gevondov.feature.countries.screen.CountriesScreen
 import com.gevondov.feature.countries.store.CountriesStateStore
 import com.gevondov.feature.countries.view.CountriesViewImpl
+import com.gevondov.feature.countries.viewmodel.CountriesViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
